@@ -15,6 +15,8 @@ Edit `index.html` and `static/css/index.css` for the page and its paper-matched 
 
 The paper’s main overview figure is displayed prominently near the top, with a full-size vector link. Boxes use complete borders rather than contrasting accent strips. The full abstract, exact numerical tables, detailed trajectory figure, and methodological caveats are available in native expandable sections. `static/data/evidence-provenance.json` records the full-precision plotted data, source CSV SHA-256 values, and research-source revision. Preserve the distinction between raw PCA-95 and matched-64 probes, task versus example inference, descriptive training endpoints, and non-rejection versus equivalence.
 
+The page, chart labels, buttons, tables, and citation share the self-hosted TeX Gyre Termes family used in the main figure. Font licenses are in `static/fonts/`; logo/icon sources and notices are in `static/images/ASSET_SOURCES.md`. Official EPFL and Idiap logos identify the numbered affiliations. Resource links use GitHub, arXiv, PDF, and storage marks.
+
 The bundled PDF and original figures are unchanged. The venue is displayed as “NeurIPS 2026 · Interpretability as a Science,” with Sydney, Australia verified against the [event page](https://interpscience.github.io/).
 
 ## Publishing
