@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Do Knowledge- and Reasoning-Oriented Benchmarks Induce Stable Representation Signatures in LLMs? Activations decode the benchmark label in five models, but prompt text alone does nearly as well.">
+  <meta property="og:title" content="Knowledge/Reasoning Representation Signatures in LLMs"/>
+  <meta property="og:description" content="Activations decode a knowledge/reasoning benchmark label in five LLMs, but the prompt text alone does nearly as well, and the best layer does not transfer across task panels."/>
+  <meta property="og:url" content="https://parsa-ra.github.io/lmbehave"/>
+  <meta property="og:image" content="https://parsa-ra.github.io/lmbehave/static/images/overview.png" />
+  <meta property="og:image:width" content="1426"/>
+  <meta property="og:image:height" content="680"/>
+
+  <meta name="twitter:title" content="Knowledge/Reasoning Representation Signatures in LLMs">
+  <meta name="twitter:description" content="Activations decode a knowledge/reasoning benchmark label in five LLMs, but the prompt text alone does nearly as well, and the best layer does not transfer across task panels.">
+  <meta name="keywords" content="Interpretability, Probing, Representation Analysis, Knowledge, Reasoning, Benchmarks, Permutation Tests, Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://parsa-ra.github.io/lmbehave/">
+  <title>LMBehave · Knowledge/Reasoning Representation Signatures</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Page navigation">
+    <a class="wordmark" href="#main">LM<span>Behave</span><span class="wordmark-dot" aria-hidden="true">.</span></a>
+    <div><a href="#findings">Findings</a><a href="#resources">Resources</a><a href="#BibTeX">Cite</a></div>
+  </nav>
+  <main id="main">
+
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <p class="eyebrow">NeurIPS 2026 · Interpretability as a Science Workshop</p>
+            <h1 class="title is-2 publication-title">Do Knowledge- and Reasoning-Oriented Benchmarks Induce Stable Representation Signatures in LLMs?</h1>
+
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://parsa-ra.github.io">Parsa Rahimi</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                Azim Dehghani Amirabad<sup>3</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>EPFL,</span>
+              <span class="author-block"><sup>2</sup>Idiap,</span>
+              <span class="author-block"><sup>3</sup>Independent Researcher</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <a href="./static/lmbehave.pdf" class="resource-button primary">Read the paper <span aria-hidden="true">↗</span></a>
+                <a href="https://arxiv.org/abs/2610.24029" class="resource-button">arXiv <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/parsa-ra/lmbehave" class="resource-button">Code <span aria-hidden="true">↗</span></a>
+                <a href="https://drive.google.com/drive/folders/1eS3xhP3qB_QBep2mUcOfbvddVSj4qHy2?usp=drive_link" class="resource-button">Artifacts <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" aria-label="Study overview">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img class="overview-image" width="1427" height="680" src="./static/images/overview.png" alt="Study overview: layerwise measurement of three streams per layer, task-level inference over all balanced task labelings, and the evidence across tests">
+
+        <p class="figure-caption">
+          Activations decode a <span class="dnerf">knowledge/reasoning</span> benchmark label in five LLMs, but the prompt text alone does nearly as well, and the best layer does not transfer across task panels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section abstract-section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content reading-copy">
+            <p>
+              Internal signatures could support monitoring, adaptive computation, and mechanistic analysis, but benchmark prompts can be separable without any shared computational distinction. We test whether a prespecified knowledge/reasoning label defines a reusable internal signature in five contemporary 7B to 31B models. We treat the <b>task as the unit of inference</b>: probes hold out complete tasks, labels are permuted across tasks, and the best layer and stream are reselected for every permutation.
+            </p>
+            <p>
+              Raw probes recover an eight-versus-eight-subject MMLU partition in all five models (macro-F1 0.78&ndash;0.81), but prompt text predicts it nearly as well: under an identical probe configuration, the activation advantage is only <b>0.017&ndash;0.070 macro-F1</b> and is not significant. At the prespecified 0.01 level, lexical adjustment removes significance while the adjusted states still identify individual subjects, and the selected site changes across task panels and selection rules. Additionally, two released base-training trajectories show no common direction. These pooled layerwise measures recover the task label but identify no transferable knowledge/reasoning signature at the tested sensitivity, which cannot exclude moderate effects. The resulting protocol gives future internal monitors and intervention studies a sequence of tests to pass.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="study-summary">
+          <h2 class="title is-3">The Study in a Nutshell</h2>
+
+          <div class="research-question">
+            <strong>Question.</strong> Does a knowledge/reasoning benchmark label identify model processing beyond task and prompt identity?
+          </div>
+
+          <div class="content reading-copy">
+            <p>
+              Benchmark suites routinely split tasks into knowledge recall and multi-step reasoning. If a model processed the two groups differently, that internal difference could drive monitors, adaptive computation, or causal interventions. A probe that merely tells the tasks apart is not enough: it can latch onto topic, vocabulary, and format.
+            </p>
+            <p>
+              We study OLMo 3 7B, Apertus 1.5 8B, Qwen 3.5 9B and 27B, and Gemma 4 31B on 16 MMLU subjects (eight knowledge-oriented, eight reasoning-oriented; 100 questions each). Read-only hooks record the token-mixing update, the feed-forward update, and the residual state at every layer. Probes are always evaluated on held-out subjects, labels are permuted across whole subjects (all 12,870 balanced labelings), and the best layer and stream are reselected for every labeling.
+            </p>
+            <p>
+              <strong>Finding.</strong> Raw states predict the label in every model, but a probe on the prompt text, run through the same estimator, is nearly as good; the gain is significant in no model. The best layer moves between task panels and selectors, and two training trajectories move in opposite directions.
+            </p>
+            <p>
+              <strong>Use.</strong> The protocol &mdash; task-level holdout and permutation, a matched prompt comparison, transfer tests, and detection calibration &mdash; tests a representation signal before it guides monitoring, adaptive computation, or causal intervention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section findings-section" id="findings">
+    <div class="container is-max-desktop">
+      <p class="section-label">The evidence</p>
+      <h2 class="title is-3">Four findings, one caution</h2>
+      <p class="section-intro">Recovering a benchmark label does not establish a transferable knowledge/reasoning signature.</p>
+
+      <article class="box finding">
+        <div class="columns is-variable is-5 is-vcentered">
+          <div class="column is-5">
+            <p class="has-text-weight-semibold"><span class="finding-number">01</span> Activations decode the label, and prompt text nearly matches them</p>
+            <p class="content">
+              At the selected site, held-out-subject probes reach macro-F1 0.78&ndash;0.81 and are significant in all five models. A character n-gram probe on the prompt text, with the same folds, feature width, and classifier, reaches 0.755. The activation gain sits inside its exact permutation null everywhere.
+            </p>
+          </div>
+          <div class="column is-7">
+            <div class="table-scroll" role="region" aria-label="Research results table" tabindex="0"><table class="table is-striped is-narrow is-fullwidth" style="font-size: 0.85rem;">
+              <thead>
+                <tr><th>Model</th><th>Activations</th><th>Prompt text</th><th>Gain &Delta;</th><th>Exact <i>p</i></th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OLMo 3 7B</td><td>0.803</td><td>0.755</td><td>+0.048</td><td>0.290</td></tr>
+                <tr><td>Apertus 1.5 8B</td><td>0.825</td><td>0.755</td><td>+0.070</td><td>0.177</td></tr>
+                <tr><td>Qwen 3.5 9B</td><td>0.802</td><td>0.755</td><td>+0.047</td><td>0.291</td></tr>
+                <tr><td>Qwen 3.5 27B</td><td>0.773</td><td>0.755</td><td>+0.017</td><td>0.440</td></tr>
+                <tr><td>Gemma 4 31B</td><td>0.807</td><td>0.755</td><td>+0.051</td><td>0.297</td></tr>
+              </tbody>
+            </table></div>
+            <p class="is-size-7">Macro-F1 on held-out subjects under the matched 64-feature estimator; <i>p</i> over all 12,870 balanced task labelings.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="box finding">
+        <div class="columns is-variable is-5 is-vcentered">
+          <div class="column is-6">
+            <p class="has-text-weight-semibold"><span class="finding-number">02</span> Splitting by example inflates the evidence</p>
+            <p class="content">
+              On an arbitrary alphabetical split of the same 16 subjects, a probe whose training and test sets share subjects looks highly significant. Holding out whole subjects removes the effect: examples from one subject are not independent evidence.
+            </p>
+          </div>
+          <div class="column is-6">
+            <div class="table-scroll" role="region" aria-label="Research results table" tabindex="0"><table class="table is-bordered is-fullwidth is-narrow" style="font-size: 0.85rem;">
+              <thead>
+                <tr><th>Validation (OLMo 3 7B)</th><th>Macro-F1</th><th><i>p</i></th></tr>
+              </thead>
+              <tbody>
+                <tr class="has-background-danger-light"><td>Examples split at random</td><td>0.802</td><td>0.0001</td></tr>
+                <tr class="has-background-success-light"><td><strong>Whole subjects held out</strong></td><td><strong>0.574</strong></td><td><strong>0.228</strong></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="box finding">
+        <div class="columns is-variable is-5 is-vcentered">
+          <div class="column is-5">
+            <p class="has-text-weight-semibold"><span class="finding-number">03</span> The best layer moves between task panels</p>
+            <p class="content">
+              Within each model we select the layer and stream with the largest mean-shift ratio. Only OLMo and Apertus keep their site across the two MMLU panels, and no model keeps it across all three. A covariance-whitened selector picks a different site in every model, although its maxima stay significant.
+            </p>
+          </div>
+          <div class="column is-7">
+            <div class="table-scroll" role="region" aria-label="Research results table" tabindex="0"><table class="table is-striped is-narrow is-fullwidth" style="font-size: 0.85rem;">
+              <thead>
+                <tr><th>Model</th><th>MMLU-Pro (5 vs 5)</th><th>MMLU (8 vs 8)</th><th>Mixed benchmarks</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OLMo 3 7B</td><td>layer 3, FFN</td><td>layer 3, FFN</td><td>layer 5, token mixing</td></tr>
+                <tr><td>Apertus 1.5 8B</td><td>layer 0, FFN</td><td>layer 0, FFN</td><td>layer 8, token mixing</td></tr>
+                <tr><td>Qwen 3.5 9B</td><td>layer 1, token mixing</td><td>layer 2, FFN</td><td>layer 11, token mixing</td></tr>
+                <tr><td>Qwen 3.5 27B</td><td>layer 11, FFN</td><td>layer 1, token mixing</td><td>layer 5, FFN</td></tr>
+                <tr><td>Gemma 4 31B</td><td>layer 12, token mixing</td><td>layer 23, FFN</td><td>layer 14, FFN</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="box finding">
+        <div class="columns is-variable is-5 is-vcentered">
+          <div class="column is-4">
+            <p class="has-text-weight-semibold"><span class="finding-number">04</span> Training trajectories point in opposite directions</p>
+            <p class="content">
+              Across seven OLMo 3 7B and eleven Apertus 1.0 8B base-training checkpoints, accuracy rises on both task groups, while the depth-averaged mean-shift ratio falls in OLMo and rises in Apertus. Neither path is monotonic, and each trajectory is a single training run.
+            </p>
+          </div>
+          <div class="column is-8">
+            <img loading="lazy" width="3120" height="1382" src="./static/images/trajectories.png" alt="Accuracy and depth-averaged mean-shift ratio across base-training checkpoints for OLMo 3 7B and Apertus 1.0 8B">
+
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section resources-section" id="resources">
+    <div class="container is-max-desktop">
+      <p class="section-label">Explore &amp; reproduce</p>
+      <h2 class="title is-3">Paper, code, and artifacts</h2>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://arxiv.org/abs/2610.24029">
+          <span class="section-label">01 · Paper</span><h3>Read the study <span aria-hidden="true">↗</span></h3>
+          <p>The full method, results, controls, and limitations. Available on arXiv and as a PDF.</p>
+        </a>
+        <a class="resource-card" href="https://github.com/parsa-ra/lmbehave">
+          <span class="section-label">02 · Code</span><h3>Reproduce the analysis <span aria-hidden="true">↗</span></h3>
+          <p>Frozen experiment manifests, an opt-in activation tracker, task-level inference, and sample-free result tables.</p>
+        </a>
+        <a class="resource-card" href="https://drive.google.com/drive/folders/1eS3xhP3qB_QBep2mUcOfbvddVSj4qHy2?usp=drive_link">
+          <span class="section-label">03 · Artifacts</span><h3>Explore the evidence <span aria-hidden="true">↗</span></h3>
+          <p>Activations, sample logs, analysis reports, exhaustive permutation nulls, and SHA-256 manifests.</p>
+        </a>
+      </div>
+      <p class="artifact-note">The full archive contains 133.7 GB of uncompressed outputs. A separate text-only archive (0.6 GB) regenerates the released result tables without loading model weights.</p>
+    </div>
+  </section>
+
+  <section class="section paper-section" id="paper">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Paper</h2>
+        <p class="paper-links"><a href="static/lmbehave.pdf">Open the PDF ↗</a> <span aria-hidden="true">·</span> <a href="https://arxiv.org/abs/2610.24029">View on arXiv ↗</a></p>
+        <iframe title="Paper PDF" loading="lazy" src="static/lmbehave.pdf" width="100%" height="560"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="citation-heading"><h2 class="title is-3">Cite this work</h2><button class="copy-citation" type="button">Copy BibTeX</button></div>
+      <pre><code id="citation">@inproceedings{rahimi2026knowledge,
+  title = {Do Knowledge- and Reasoning-Oriented Benchmarks Induce
+           Stable Representation Signatures in {LLMs}?},
+  author = {Rahimi Noshanagh, Parsa and Dehghani Amirabad, Azim},
+  booktitle = {NeurIPS 2026 Workshop on Interpretability as a Science},
+  year = {2026},
+  eprint = {2610.24029},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2610.24029}
+}</code></pre>
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  </main>
+  <footer class="footer">
+    <div class="container is-max-desktop footer-content">
+      <p><strong>LMBehave</strong> · NeurIPS 2026 Interpretability as a Science Workshop</p>
+      <p><a href="https://github.com/parsa-ra/lmbehave-page">Website source</a> · Adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> and <a href="https://nerfies.github.io">Nerfies</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
