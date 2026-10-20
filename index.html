@@ -20,11 +20,11 @@
   <title>LMBehave · Knowledge/Reasoning Representation Signatures</title>
   <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
 
-  <link rel="stylesheet" href="static/css/index.css">
-  <link rel="stylesheet" href="static/css/evidence.css">
+  <link rel="stylesheet" href="static/css/index.css?v=14b002e23be1">
+  <link rel="stylesheet" href="static/css/evidence.css?v=15bbceec9dc2">
 
-  <script defer src="static/js/index.js"></script>
-  <script defer src="static/js/evidence.js"></script>
+  <script defer src="static/js/index.js?v=2af7b6f9ffa3"></script>
+  <script defer src="static/js/evidence.js?v=f22b1f61a5a0"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -46,6 +46,15 @@
       <a href="https://drive.google.com/drive/folders/1eS3xhP3qB_QBep2mUcOfbvddVSj4qHy2?usp=drive_link" class="resource-button">Artifacts <span aria-hidden="true">↗</span></a>
     </div>
   </header>
+
+
+  <section class="overview-section wrap" aria-label="Main figure from the paper">
+    <div class="overview-heading"><p class="section-label">The study at a glance</p><a href="static/images/overview.svg">Open full-size figure ↗</a></div>
+    <figure>
+      <a class="overview-link" href="static/images/overview.svg" aria-label="Open the paper’s main overview figure at full size"><img class="overview-image" fetchpriority="high" width="1427" height="680" src="static/images/overview.png" alt="The paper’s main figure: layerwise measurement of token-mixing, feed-forward and residual streams; complete-task holdout and exhaustive task-label permutations with site reselection; evidence on label recovery, prompt-matched excess, selected-site transfer and training trajectories."></a>
+      <figcaption>The paper’s main figure: how we measure internal states, test whole-task labels, and distinguish label recovery from evidence for a reusable signature.</figcaption>
+    </figure>
+  </section>
 
   <section class="summary-section wrap" aria-labelledby="main-message">
     <p class="section-label">The central finding</p>
@@ -112,7 +121,6 @@
     <p class="section-label">The contribution</p><h2 id="method-title">A protocol for testing a candidate internal signature.</h2>
     <ol class="protocol-flow"><li><span>1</span><h3>Recover the label</h3><p>Fit probes on training subjects and evaluate on entirely held-out subjects.</p></li><li><span>2</span><h3>Compare with the input</h3><p>Use matched prompt features, folds, and classifiers to test added prediction.</p></li><li><span>3</span><h3>Check stability</h3><p>Change task panels and selectors before reusing a selected site.</p></li><li><span>4</span><h3>Calibrate and intervene</h3><p>Measure detection sensitivity; test causal importance before downstream use.</p></li></ol>
     <aside class="scope-note"><strong>What remains open.</strong> Non-rejection is not evidence of equivalence. The selection-aware calibration did not demonstrate useful sensitivity even at the largest injected shift. Moderate signals and processing differences remain possible; this study validates no monitor, router, or pruning policy.</aside>
-    <details class="data-details"><summary>Measurement and inference, visually</summary><figure><img loading="lazy" width="1427" height="680" src="static/images/overview.png" alt="Paper overview: three representation streams at every layer, complete-task holdout and exhaustive label permutations with site reselection, and the evidence across recovery, prompt excess, transfer, and training."><figcaption>The paper’s complete study overview. Measurements use the final valid prompt token. All 12,870 balanced subject-label assignments reselect the layer–stream site and refit the probe.</figcaption></figure></details>
     <details class="data-details" id="abstract"><summary>Read the full abstract</summary><div class="reading-copy"><p>
               Internal signatures could support monitoring, adaptive computation, and mechanistic analysis, but benchmark prompts can be separable without any shared computational distinction. We test whether a prespecified knowledge/reasoning label defines a reusable internal signature in five contemporary 7B to 31B models. We treat the <b>task as the unit of inference</b>: probes hold out complete tasks, labels are permuted across tasks, and the best layer and stream are reselected for every permutation.
             </p>

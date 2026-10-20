@@ -13,7 +13,7 @@ Open `index.html` directly in a browser. This is a static website; no server, bu
 
 Edit `index.html` and `static/css/index.css` for the page and its paper-matched blue/orange palette. `static/js/evidence.js` and `static/css/evidence.css` render the matched-probe, holdout-control, and localization charts; `static/js/index.js` handles the interactive training endpoint chart and citation copying. All charts work when opening the HTML directly, without fetching data.
 
-The full abstract, exact numerical tables, original paper figures, and methodological caveats are available in native expandable sections. `static/data/evidence-provenance.json` records the full-precision plotted data, source CSV SHA-256 values, and research-source revision. Preserve the distinction between raw PCA-95 and matched-64 probes, task versus example inference, descriptive training endpoints, and non-rejection versus equivalence.
+The paper’s main overview figure is displayed prominently near the top, with a full-size vector link. Boxes use complete borders rather than contrasting accent strips. The full abstract, exact numerical tables, detailed trajectory figure, and methodological caveats are available in native expandable sections. `static/data/evidence-provenance.json` records the full-precision plotted data, source CSV SHA-256 values, and research-source revision. Preserve the distinction between raw PCA-95 and matched-64 probes, task versus example inference, descriptive training endpoints, and non-rejection versus equivalence.
 
 The bundled PDF and original figures are unchanged. The venue is displayed as “NeurIPS 2026 · Interpretability as a Science,” with Sydney, Australia verified against the [event page](https://interpscience.github.io/).
 
