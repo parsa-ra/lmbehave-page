@@ -86,5 +86,6 @@ h2 { font-size:clamp(1.55rem,2.7vw,2.05rem); font-weight:650; letter-spacing:-.0
 .epfl-logo { width:90px; height:auto; transform:translateY(20%); }
 .idiap-logo { width:156px; height:auto; }
 .independent-affiliation { font-size:var(--text-small); }
+.independent-affiliation .affiliation-label { padding:0; font-size:1.8125rem; line-height:1.15; }
 h1,h2,h3,.main-message,.wordmark { letter-spacing:normal; }
-@media(max-width:520px) { .affiliations { --affiliation-height:2.625rem; gap:.2rem .7rem; }.epfl-logo { width:78px; }.idiap-logo { width:136px; }.independent-affiliation { font-size:var(--text-small); }.resource-button { gap:.4rem; } }
+@media(max-width:520px) { .affiliations { --affiliation-height:2.625rem; gap:.2rem .7rem; }.epfl-logo { width:78px; }.idiap-logo { width:136px; }.independent-affiliation .affiliation-label { font-size:1.625rem; }.resource-button { gap:.4rem; } }
