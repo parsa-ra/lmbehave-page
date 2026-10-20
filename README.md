@@ -11,7 +11,11 @@ Website for *Do Knowledge- and Reasoning-Oriented Benchmarks Induce Stable Repre
 
 Open `index.html` directly in a browser. This is a static website; no server, build tool, package installation, or external font service is needed.
 
-Edit `index.html`, `static/css/index.css`, and `static/js/index.js`. The bundled PDF and figures are in `static/`. Numerical results come from the hash-bound summary tables in the research repository. Preserve their estimator definitions and claim limits when updating the page.
+Edit `index.html` and `static/css/index.css` for the page and its paper-matched blue/orange palette. `static/js/evidence.js` and `static/css/evidence.css` render the matched-probe, holdout-control, and localization charts; `static/js/index.js` handles the interactive training endpoint chart and citation copying. All charts work when opening the HTML directly, without fetching data.
+
+The full abstract, exact numerical tables, original paper figures, and methodological caveats are available in native expandable sections. `static/data/evidence-provenance.json` records the full-precision plotted data, source CSV SHA-256 values, and research-source revision. Preserve the distinction between raw PCA-95 and matched-64 probes, task versus example inference, descriptive training endpoints, and non-rejection versus equivalence.
+
+The bundled PDF and original figures are unchanged. The venue is displayed as “NeurIPS 2026 · Interpretability as a Science,” with Sydney, Australia verified against the [event page](https://interpscience.github.io/).
 
 ## Publishing
 
