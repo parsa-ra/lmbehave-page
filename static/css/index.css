@@ -77,13 +77,14 @@ h2 { font-size:clamp(1.55rem,2.7vw,2.05rem); font-weight:650; letter-spacing:-.0
 .resource-icon { display:inline-block; width:1.1em; height:1.1em; flex:0 0 auto; vertical-align:-.12em; }
 .resource-card h3 { display:flex; align-items:center; gap:.6rem; }
 .resource-card .resource-icon { width:1.2em; height:1.2em; }
-.affiliations { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.35rem 1.05rem; margin-top:.55rem; }
-.affiliations .affiliation { display:inline-flex; align-items:center; gap:.25rem; padding:0; }
-.affiliations .affiliation sup { font-size:.7em; align-self:center; position:relative; top:-.4em; margin:0; }
-.affiliation-logo-link { display:inline-flex; align-items:center; }
+.affiliations { --affiliation-height:3rem; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.35rem 1.05rem; margin-top:.55rem; }
+.affiliations .affiliation { display:inline-flex; align-items:center; min-height:var(--affiliation-height); gap:.35rem; padding:0; }
+.affiliations .affiliation sup { font-size:.7em; line-height:1; align-self:center; position:static; transform:translateY(-.35em); margin:0; }
+.affiliation-logo-link { display:inline-flex; align-items:center; height:var(--affiliation-height); }
 .affiliation-logo { display:block; object-fit:contain; width:auto; }
-.epfl-logo { width:80px; height:auto; }
+/* Center the visible EPFL lettering; its official SVG includes extra space below. */
+.epfl-logo { width:90px; height:auto; transform:translateY(20%); }
 .idiap-logo { width:156px; height:auto; }
 .independent-affiliation { font-size:var(--text-small); }
 h1,h2,h3,.main-message,.wordmark { letter-spacing:normal; }
-@media(max-width:520px) { .affiliations { gap:.2rem .7rem; }.epfl-logo { width:66px; }.idiap-logo { width:136px; }.independent-affiliation { font-size:var(--text-small); }.resource-button { gap:.4rem; } }
+@media(max-width:520px) { .affiliations { --affiliation-height:2.625rem; gap:.2rem .7rem; }.epfl-logo { width:78px; }.idiap-logo { width:136px; }.independent-affiliation { font-size:var(--text-small); }.resource-button { gap:.4rem; } }
